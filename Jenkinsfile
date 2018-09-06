@@ -3,7 +3,9 @@ pipeline {
 
     stages {
       stage ('build') { 
-         agent any
+         agent {
+           label 'master'
+         }
           steps {
             checkout scm
             sh 'mvn clean package'
