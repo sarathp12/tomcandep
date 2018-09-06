@@ -6,7 +6,7 @@ pipeline {
          agent master
           steps {
             checkout scm
-            sh mvn clean package
+            sh 'mvn clean package'
              }
           }
        }
