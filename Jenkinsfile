@@ -2,7 +2,7 @@ pipeline {
     agent none
     tools  {
       maven 'maven 3.5.4'
-      jdk 'jdk1.8.0'
+      jdk 'jdk'
       }
 
     stages {
@@ -11,6 +11,7 @@ pipeline {
            label 'master'
          }
           steps {
+            echo "i am running"
             sh 'mvn clean package'
              }
           }
