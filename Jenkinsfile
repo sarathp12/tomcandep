@@ -6,6 +6,7 @@ pipeline {
       }
 
     stages {
+      
       stage ('build') { 
          agent {
            label 'master'
@@ -13,7 +14,20 @@ pipeline {
           steps {
             echo "i am running"
             sh 'mvn clean package'
+            archiveArtifacts artifacts: 'dist/webproject.zip'
              }
+      
+      stage ('deploy') {
+        steps {
+            publishOverSsh {
+            server('terradock') {
+                transferSet {
+                    sourceFiles('webproject.zip')
+                        }
+                   }
+                }
+              }
+            } 
           }
        }
    }
