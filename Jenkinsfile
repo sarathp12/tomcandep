@@ -14,7 +14,7 @@ pipeline {
           steps {
             echo "i am running"
             sh 'mvn clean package'
-            archiveArtifacts artifacts: 'build/libs/**/*.war'
+            archiveArtifacts artifacts: '**/*.war'
              }
          }
      }
