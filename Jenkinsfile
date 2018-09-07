@@ -17,6 +17,18 @@ pipeline {
             archiveArtifacts artifacts: '**/*.war'
              }
          }
+
+       stage ('deploy') {
+        steps {
+            publishOverSsh {
+            server('terradock') {
+                transferSet {
+                    sourceFiles('/target/webproject.war')
+                       }
+                  }
+               }
+            }
+          }
      }
   }      
            
