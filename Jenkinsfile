@@ -23,8 +23,9 @@ pipeline {
             label 'master'
            }
          steps {
-            sh 'cd /var/lib/jenkins/workspace/simple-webapp-tomcat'                  
-            sh 'scp *.war jenkins@192.168.144.143:/home/jenkins'
+            sh 'chmod u+x for-copy.sh'
+            sh './for-copy.sh'          
+
                 }
            }
       
