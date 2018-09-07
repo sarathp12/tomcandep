@@ -33,6 +33,7 @@ pipeline {
              label 'docker'
             }
          steps { 
+           sh 'rm -rf *.war'
            sh 'chmod u+x firstexec.sh'
            sh './firstexec.sh'
            }
