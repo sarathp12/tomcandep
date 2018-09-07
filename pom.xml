@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.company</groupId>
-  <artifactId>web_$(BUILD_NAME)</artifactId>
+  <artifactId>webproject</artifactId>
   <version>1.8.$(BUILD_NUMBER)</version>
   <packaging>war</packaging>
 
@@ -38,7 +38,7 @@
 
 
   <build>
-    <finalName>webproject</finalName>
+    <finalName>${project.name}##${project.version}.${BUILD_NUMBER}</finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <plugin>
