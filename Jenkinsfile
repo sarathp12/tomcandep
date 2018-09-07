@@ -14,9 +14,13 @@ pipeline {
           steps {
             echo "i am running"
             sh 'mvn clean package'
-            archiveArtifacts artifacts: 'dist/webproject.zip'
              }
         }
+     
+      stage ('archival artefacts') { 
+           archiveArtifacts artifacts: 'build/libs/**/*.war', fingerprint: true
+  
+         }
      }
   }      
            
