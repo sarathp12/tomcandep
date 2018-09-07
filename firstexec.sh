@@ -1,5 +1,6 @@
 #! /bin/bash
 
+sudo rm -rf /home/jenkins/workspace/simple-webapp-tomcat/*.war
 cp /home/jenkins/*.war /home/jenkins/workspace/simple-webapp-tomcat
 
 cd /home/jenkins/workspace/simple-webapp-tomcat
