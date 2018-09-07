@@ -7,5 +7,7 @@ cd /home/jenkins/workspace/simple-webapp-tomcat
 
 sudo docker build -t webserver:v20 .
 
+sudo rm -rf /home/jenkins/*.war
+
 
 sudo docker run -d --rm -p 9095:8080 --name webproject webserver:v20 
