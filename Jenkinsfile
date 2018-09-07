@@ -16,19 +16,7 @@ pipeline {
             sh 'mvn clean package'
             archiveArtifacts artifacts: 'dist/webproject.zip'
              }
-      
-      stage ('deploy') {
-        steps {
-            publishOverSsh {
-            server('terradock') {
-                transferSet {
-                    sourceFiles('webproject.zip')
-                        }
-                   }
-                }
-              }
-            } 
-          }
-       }
-   }
-              
+        }
+     }
+  }      
+           
