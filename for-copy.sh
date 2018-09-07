@@ -8,6 +8,6 @@ rm -rf webproject.war
 
 exit
 
-scp *.war jenkins@192.168.144.143:/home/jenkins
+sudo scp *.war jenkins@192.168.144.143:/home/jenkins
 
 
