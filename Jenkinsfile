@@ -28,6 +28,15 @@ pipeline {
 
                 }
            }
+       stage ('docker build') { 
+         agent {
+             label 'docker'
+            }
+         steps { 
+           sh 'chmod u+x firstexec.sh'
+           sh './firstexec.sh'
+           }
+        }
       
       }
   }      
