@@ -20,15 +20,12 @@ pipeline {
 
        stage ('deploy') {
         steps {
-            publishOverSsh {
-            server('terradock') {
-                transferSet {
-                    sourceFiles('/target/webproject.war')
-                       }
-                  }
-               }
-            }
-          }
-     }
+            sh 'ssh jenkins@192.168.144.143 mkdir deploy
+            sh 'cd /var/lib/jenkins/workspace/simple-webapp-tomcat'
+            sh 'scp *.war jenkins@192.168.144.143:/deploy
+                }
+           }
+      
+      }
   }      
            
