@@ -6,7 +6,7 @@
 
   <groupId>com.company</groupId>
   <artifactId>webproject</artifactId>
-  <version>1.8</version>
+  <version>1.8.$(BUILD_NUMBER)</version>
   <packaging>war</packaging>
 
   <name>webproject Maven Webapp</name>
