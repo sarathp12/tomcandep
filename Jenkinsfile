@@ -23,9 +23,8 @@ pipeline {
             label 'master'
            }
          steps {
-            sh 'ssh jenkins@192.168.144.143 mkdir deploy'
-            sh 'cd /var/lib/jenkins/workspace/simple-webapp-tomcat'
-            sh 'scp *.war jenkins@192.168.144.143:/deploy'
+            sh 'cd /var/lib/jenkins/workspace/simple-webapp-tomcat'                  
+            sh 'scp *.war jenkins@192.168.144.143:/deploy/'
                 }
            }
       
